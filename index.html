@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kashif-alam · run/production-engineer-v1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="side-rail left" id="railLeft"><canvas></canvas></div>
+<div class="side-rail right" id="railRight"><canvas></canvas></div>
+
+
+<div id="boot">
+  <pre><span class="l l0">$ ssh kashif@portfolio</span>
+<span class="l l1">connecting to production... ok</span>
+<span class="l l2">loading model weights <span class="ok">done</span></span>
+<span class="l l3">starting fastapi server on :8000</span>
+<span class="l l4">initializing langgraph orchestrator...</span>
+<span class="l l5"><span class="ok">✓ all systems operational</span></span></pre>
+  <div class="skip" id="skipBoot">skip →</div>
+</div>
+
+<header>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="breadcrumb"><b>kashif-alam</b> / portfolio / <span class="mono">run-production-v1</span>
+        <span class="status-pill"><span class="dot"></span>live</span>
+      </div>
+      <div class="tabs">
+        <a href="#overview">overview</a>
+        <a href="#runs">runs</a>
+        <a href="#artifacts">artifacts</a>
+        <a href="#config">config</a>
+        <a href="#logs">logs</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="overview">
+    <div class="wrap">
+      <div class="run-head">
+        <div>
+          <div class="run-title"><span class="path">Kashif-Alam /</span> <span class="id">AI-engineer</span>.v1</div>
+          <p class="run-sub">Backend & AI Systems Engineer, Karachi PK. Building RESTful APIs, microservices, and LLM-orchestration pipelines that survive contact with production traffic.</p>
+        </div>
+        <div>
+          <div id="icoWrap"></div>
+          <div class="ico-caption">checkpoint saved</div>
+        </div>
+      </div>
+
+      <div class="meta-row">
+        <div class="meta-cell"><div class="k">status</div><div class="v green">available for hire</div></div>
+        <div class="meta-cell"><div class="k">runtime</div><div class="v">1.5+ yrs elapsed</div></div>
+        <div class="meta-cell"><div class="k">framework</div><div class="v amber">fastapi · langgraph</div></div>
+        <div class="meta-cell"><div class="k">environment</div><div class="v">karachi, pk</div></div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-top">
+          <div class="chart-title">career_loss.log — lower is better (yes, this metaphor is doing a lot of work)</div>
+          <div class="legend">
+            <span><i class="swatch train"></i>train_loss</span>
+            <span><i class="swatch val"></i>val_loss</span>
+          </div>
+        </div>
+        <svg id="lossChart" viewBox="0 0 1000 260" preserveAspectRatio="none">
+          <line x1="0" y1="45" x2="1000" y2="45" stroke="var(--border-soft)" stroke-width="1"/>
+          <line x1="0" y1="120" x2="1000" y2="120" stroke="var(--border-soft)" stroke-width="1"/>
+          <line x1="0" y1="195" x2="1000" y2="195" stroke="var(--border-soft)" stroke-width="1"/>
+          <path id="valPath" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-dasharray="6 5" opacity="0.7"
+            d="M40,55 L220,80 L400,100 L580,128 L760,158 L960,188" />
+          <path id="trainPath" fill="none" stroke="var(--coral)" stroke-width="2.5"
+            d="M40,45 L130,68 L220,58 L310,92 L400,86 L490,128 L580,113 L670,152 L760,143 L850,182 L960,198" />
+          <g id="cpDots">
+            <circle cx="40" cy="45" r="5" fill="#0a0b0d" stroke="var(--amber)" stroke-width="2"/>
+            <circle cx="310" cy="92" r="5" fill="#0a0b0d" stroke="var(--amber)" stroke-width="2"/>
+            <circle cx="580" cy="113" r="5" fill="#0a0b0d" stroke="var(--amber)" stroke-width="2"/>
+            <circle cx="760" cy="143" r="5" fill="#0a0b0d" stroke="var(--amber)" stroke-width="2"/>
+            <circle cx="960" cy="198" r="5" fill="#0a0b0d" stroke="var(--amber)" stroke-width="2"/>
+          </g>
+        </svg>
+        <div class="checkpoints">
+          <div class="cp" style="left:4%"><div class="tick"></div><div class="lbl">2022<br>started BS SE</div></div>
+          <div class="cp" style="left:31%"><div class="tick"></div><div class="lbl">2024<br>ML intern, DEN Pakistan</div></div>
+          <div class="cp" style="left:58%"><div class="tick"></div><div class="lbl">2024<br>began AI/ML tutoring</div></div>
+          <div class="cp" style="left:76%"><div class="tick"></div><div class="lbl">2025<br>AI engineer, Clinet</div></div>
+          <div class="cp" style="left:96%"><div class="tick"></div><div class="lbl">2026<br>here, building</div></div>
+        </div>
+        <div class="curve-note">// epoch = year · checkpoint = role · loss trending down since 2022</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="runs">
+    <div class="wrap">
+      <div class="panel-label reveal">experience.runs()<span class="rule"></span></div>
+
+      <details class="run-row reveal" open>
+        <summary>
+          <div class="run-row-left">
+            <span class="run-id">run-004</span>
+            <div><span class="run-name">AI Specialist</span> — <span class="run-org">Children & Families Welfare Organization (CFWO)</span></div>
+          </div>
+          <div class="run-row-right">
+            <span class="run-date mono">Jul 2026 — present</span>
+            <span class="badge active">active</span>
+            <span class="metric-chip">~2x task speed</span>
+            <span class="chevron">▶</span>
+          </div>
+        </summary>
+        <div class="run-body">
+          <ul>
+            <li>Applied prompt engineering across Claude, Gemini, and ChatGPT to accelerate research, content creation, and data extraction, doubling (~2x) the team's task completion speed.</li>
+            <li>Acted as the team's go-to resource for AI-based problem-solving, enabling non-technical colleagues to adopt AI tools effectively for daily operations.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="run-row reveal">
+        <summary>
+          <div class="run-row-left">
+            <span class="run-id">run-003</span>
+            <div><span class="run-name">Software / AI Engineer (Contract)</span> — <span class="run-org">Clinet Pvt Ltd</span></div>
+          </div>
+          <div class="run-row-right">
+            <span class="run-date mono">2025</span>
+            <span class="badge done">completed</span>
+            <span class="metric-chip">−60% resource waste</span>
+            <span class="chevron">▶</span>
+          </div>
+        </summary>
+        <div class="run-body">
+          <ul>
+            <li>Designed and deployed RESTful microservices on a VPS with secure sandboxing, isolating LLM model execution across 3+ environments and cutting unauthorized resource usage by ~60%.</li>
+            <li>Built tool-use and task-orchestration pipelines with LangChain and LangGraph, lifting agent task completion reliability to ~90% across integrated backend services.</li>
+            <li>Configured and maintained server infrastructure — environment management, dependency isolation, deployment automation.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="run-row reveal">
+        <summary>
+          <div class="run-row-left">
+            <span class="run-id">run-002</span>
+            <div><span class="run-name">AI/ML Tutor</span> — <span class="run-org">Independent</span></div>
+          </div>
+          <div class="run-row-right">
+            <span class="run-date mono">2024 — 2026</span>
+            <span class="badge done">completed</span>
+            <span class="metric-chip">5+ students mentored</span>
+            <span class="chevron">▶</span>
+          </div>
+        </summary>
+        <div class="run-body">
+          <ul>
+            <li>Delivered university-level instruction in AI, ML, Deep Learning, LLMs, Prompt Engineering, and RAG across multiple cohorts.</li>
+            <li>Mentored students on real-world Python projects through assignments, exams, and final-year project delivery.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="run-row reveal">
+        <summary>
+          <div class="run-row-left">
+            <span class="run-id">run-001</span>
+            <div><span class="run-name">ML Intern</span> — <span class="run-org">Digital Empowerment Network Pakistan</span></div>
+          </div>
+          <div class="run-row-right">
+            <span class="run-date mono">2024</span>
+            <span class="badge done">completed</span>
+            <span class="metric-chip">2.81x faster</span>
+            <span class="chevron">▶</span>
+          </div>
+        </summary>
+        <div class="run-body">
+          <ul>
+            <li>Built a CNN achieving 73% accuracy on CIFAR-10; reduced GPU inference time 2.81x vs CPU baseline.</li>
+            <li>Delivered an end-to-end deep learning pipeline from data preprocessing through evaluation and reporting.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="artifacts">
+    <div class="wrap">
+      <div class="panel-label reveal">artifact_registry<span class="rule"></span></div>
+
+      <details class="artifact reveal" open>
+        <summary>
+          <span class="a-type pipeline">pipeline</span>
+          <span class="a-name">Oraculum — AI Financial Advisor</span>
+          <span class="a-ver">v1.4 · 1.67% avg error</span>
+        </summary>
+        <div class="artifact-body">
+          <p>A modular AI-powered financial advisor with 5+ backend services covering transaction management, spending insights, and real-time crypto tracking. Includes a Stacked LSTM stock model and a RAG-based chatbot giving advice across a user's full portfolio.</p>
+          <div class="stack"><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">LSTM</span><span class="chip">RAG</span><span class="chip">Microservices</span></div>
+        </div>
+      </details>
+
+      <details class="artifact reveal">
+        <summary>
+          <span class="a-type model">model</span>
+          <span class="a-name">Sentimo — Sentiment Analysis</span>
+          <span class="a-ver">v1.0 · &lt;500ms latency</span>
+        </summary>
+        <div class="artifact-body">
+          <p>A real-time sentiment pipeline built on DistilBERT and PyTorch, delivering predictions in under 500ms across 4 languages via Google Translate API. Full-stack Flask app with a dynamic sentiment UI, ~40% lower compute overhead from the distilled architecture.</p>
+          <div class="stack"><span class="chip">DistilBERT</span><span class="chip">PyTorch</span><span class="chip">Flask</span><span class="chip">NLP</span></div>
+        </div>
+      </details>
+
+      <details class="artifact reveal">
+        <summary>
+          <span class="a-type model">model</span>
+          <span class="a-name">GPU-Accelerated Image Classification</span>
+          <span class="a-ver">v1.0 · 73.21% acc</span>
+        </summary>
+        <div class="artifact-body">
+          <p>GPU-optimized CIFAR-10 workflows: training time cut 5.25x (1,882s → 358s) and inference 2.81x (6.10s → 2.17s), while lifting accuracy from 70.04% to 73.21%.</p>
+          <div class="stack"><span class="chip">PyTorch</span><span class="chip">CUDA</span><span class="chip">CNN</span></div>
+        </div>
+      </details>
+
+      <details class="artifact reveal">
+        <summary>
+          <span class="a-type service">service</span>
+          <span class="a-name">AI/ML Curriculum & Mentorship</span>
+          <span class="a-ver">ongoing</span>
+        </summary>
+        <div class="artifact-body">
+          <p>Designed and delivered lesson plans on LLMs, prompt engineering, and RAG for university cohorts, and mentored students end-to-end on final-year Python projects.</p>
+          <div class="stack"><span class="chip">Teaching</span><span class="chip">LLMs</span><span class="chip">RAG</span></div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="config">
+    <div class="wrap">
+      <div class="panel-label reveal">stack.config<span class="rule"></span></div>
+      <div class="code-card reveal">
+        <div class="file-tab">config.yaml</div>
+        <pre><span class="ln">1</span><span class="yc"># auto-generated from 1.5 years of production use</span>
+<span class="ln">2</span><span class="yk">profile</span><span class="yd">:</span>
+<span class="ln">3</span>  <span class="yk">role</span><span class="yd">:</span> <span class="ys">backend + ai systems engineer</span>
+<span class="ln">4</span>  <span class="yk">based_in</span><span class="yd">:</span> <span class="ys">karachi, pk</span>
+<span class="ln">5</span>
+<span class="ln">6</span><span class="yk">languages</span><span class="yd">:</span> [<span class="ys">python</span>, <span class="ys">cpp</span>, <span class="ys">java</span>]
+<span class="ln">7</span>
+<span class="ln">8</span><span class="yk">backend</span><span class="yd">:</span>
+<span class="ln">9</span>  <span class="yk">framework</span><span class="yd">:</span> [<span class="ys">fastapi</span>, <span class="ys">flask</span>]
+<span class="ln">10</span>  <span class="yk">patterns</span><span class="yd">:</span> [<span class="ys">restful-api</span>, <span class="ys">microservices</span>]
+<span class="ln">11</span>  <span class="yk">templating</span><span class="yd">:</span> [<span class="ys">jinja</span>, <span class="ys">wtforms</span>]
+<span class="ln">12</span>
+<span class="ln">13</span><span class="yk">ml_dl</span><span class="yd">:</span>
+<span class="ln">14</span>  <span class="yk">core</span><span class="yd">:</span> [<span class="ys">numpy</span>, <span class="ys">pandas</span>, <span class="ys">scikit-learn</span>]
+<span class="ln">15</span>  <span class="yk">deep_learning</span><span class="yd">:</span> [<span class="ys">tensorflow</span>, <span class="ys">keras</span>, <span class="ys">pytorch</span>]
+<span class="ln">16</span>  <span class="yk">llm_stack</span><span class="yd">:</span> [<span class="ys">langchain</span>, <span class="ys">langgraph</span>, <span class="ys">langsmith</span>, <span class="ys">huggingface</span>]
+<span class="ln">17</span>
+<span class="ln">18</span><span class="yk">nlp</span><span class="yd">:</span> [<span class="ys">nltk</span>, <span class="ys">spacy</span>, <span class="ys">transformers</span>, <span class="ys">rag</span>, <span class="ys">vector-stores</span>]
+<span class="ln">19</span>
+<span class="ln">20</span><span class="yk">databases</span><span class="yd">:</span> [<span class="ys">postgresql</span>, <span class="ys">mongodb-atlas</span>, <span class="ys">mssql</span>, <span class="ys">sqlite</span>, <span class="ys">sqlalchemy</span>]
+<span class="ln">21</span>
+<span class="ln">22</span><span class="yk">infra</span><span class="yd">:</span>
+<span class="ln">23</span>  <span class="yk">containers</span><span class="yd">:</span> <span class="ys">docker</span>
+<span class="ln">24</span>  <span class="yk">vcs</span><span class="yd">:</span> [<span class="ys">git</span>, <span class="ys">github</span>]
+<span class="ln">25</span>  <span class="yk">hosting</span><span class="yd">:</span> [<span class="ys">vercel</span>, <span class="ys">neon</span>]
+<span class="ln">26</span>  <span class="yk">compute</span><span class="yd">:</span> <span class="ys">google-colab</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="logs" style="border-bottom:none;">
+    <div class="wrap">
+      <div class="panel-label reveal">tail -f contact.log<span class="rule"></span></div>
+      <div class="terminal reveal">
+        <div class="term-bar">
+          <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+          <span class="term-title">kashif@portfolio: ~</span>
+        </div>
+        <div class="term-body" id="termBody">
+          <div class="reveal-line"><span class="prompt">$</span> <span class="cmd">whoami</span></div>
+          <div class="reveal-line out">Kashif Alam — Software Engineer, Backend & AI Systems</div>
+          <div class="reveal-line"><span class="prompt">$</span> <span class="cmd">cat education.txt</span></div>
+          <div class="reveal-line out">BS Software Engineering, Bahria University</div>
+          <div class="reveal-line"><span class="prompt">$</span> <span class="cmd">cat contact.txt</span></div>
+          <div class="reveal-line out">email: <a href="mailto:alamkashif827@gmail.com">alamkashif827@gmail.com</a></div>
+          <div class="reveal-line out">phone: <a href="tel:+923118331267">+92 311 8331267</a></div>
+          <div class="reveal-line out">github: <a href="https://github.com/Kashif-alamshah" target="_blank" rel="noopener">github.com/Kashif-alamshah</a></div>
+          <div class="reveal-line out">linkedin: <a href="https://www.linkedin.com/in/kashif-alam-59726b152/" target="_blank" rel="noopener">in/kashif-alam-59726b152</a></div>
+          <div class="reveal-line"><span class="prompt">$</span> <span class="cmd">open mailto:alamkashif827@gmail.com</span> <span class="cursor-blink"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <span>kashif-alam / portfolio / production-v1</span>
+      <span>exit code 0 · built with html, css, js</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
