@@ -125,7 +125,41 @@
   }
   .cp .tick{width:1px; height:8px; background:var(--border); margin:0 auto 6px;}
   .cp .lbl{font-family:var(--mono); font-size:10px; color:var(--text-faint); line-height:1.5;}
-  @media (max-width:720px){ .cp{width:90px;} .cp .lbl{font-size:9px;} .meta-row{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:720px){ .cp{width:80px;} .cp .lbl{font-size:8.5px;} .meta-row{grid-template-columns:repeat(2,1fr);} }
+
+  /* ---------- MOBILE OVERRIDES ---------- */
+  @media (max-width:600px){
+    .wrap{padding:0 16px;}
+    section{padding:40px 0;}
+
+    /* checkpoints: absolute % layout collapses on narrow screens, so
+       switch to a simple stacked list instead */
+    .checkpoints{
+      position:static; height:auto; display:flex; flex-direction:column; gap:10px;
+      margin-top:14px; padding-top:14px; border-top:1px solid var(--border-soft);
+    }
+    .cp{position:static; transform:none; width:auto; text-align:left; display:flex; align-items:baseline; gap:10px;}
+    .cp .tick{width:8px; height:1px; margin:0; flex-shrink:0;}
+    .cp .lbl{font-size:11px; line-height:1.4;}
+
+    /* run-head: keep icon from crowding the title on narrow screens */
+    .run-head{flex-direction:column; align-items:flex-start; gap:16px;}
+    .run-head > div:last-child{display:flex; align-items:center; gap:10px;}
+    .ico-caption{margin-top:0;}
+
+    /* run rows / artifacts: stack instead of squeezing onto one line */
+    .run-row summary, .artifact summary{flex-direction:column; align-items:flex-start; gap:10px;}
+    .run-row-right{width:100%; justify-content:flex-start; flex-wrap:wrap;}
+    .a-name{min-width:0;}
+    .run-name, .run-org{word-break:break-word;}
+
+    /* code & terminal blocks: tighter padding so more fits before scrolling */
+    .code-card pre{padding:14px; font-size:12px;}
+    .term-body{padding:16px; font-size:12.5px;}
+
+    .tabs{gap:0;}
+    .tabs a{padding:6px 8px; font-size:11.5px;}
+  }
 
   /* ---------- RUNS (experience) ---------- */
   .run-row{border:1px solid var(--border); border-radius:8px; background:var(--panel); margin-bottom:10px; overflow:hidden;}
